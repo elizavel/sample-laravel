@@ -35,14 +35,14 @@ class MultisysController extends Controller
 		
 		$this->soapWrapper->add('GetBillers', function ($service) {
 			  $service
-				->wsdl('http://172.24.1.6:8083/MultiSys/Services.asmx?WSDL')
+				
 				->trace(true)
 				->classmap([]);
 			});
 
 			// Without classmap
 			$response = $this->soapWrapper->call('GetBillers.GetBillers', [
-			  'tpaId' => '5503', 
+			  'tpaId' => '1111', 
 			]);
 
 			$billers = explode("|",$response->GetBillersResult);
@@ -67,11 +67,11 @@ class MultisysController extends Controller
 	function rules($merchantId){
 		 
 		
-		$wsdl="http://172.24.1.6:8083/MultiSys/Services.asmx?WSDL";
+		$wsdl="";
 	
 	
 		$content = array(
-				'tpaId'=>'1A61',
+				'tpaId'=>'1111',
 				'merchantId'=>$merchantId
 		);
 	
